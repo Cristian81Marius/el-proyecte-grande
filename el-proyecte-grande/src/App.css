@@ -30,3 +30,15 @@ a:hover {
 .m-b-15 {
   margin-bottom: 15px
 } */
+.modal {
+  /* background: green; */
+  width: max-content ;
+  height: max-content;
+  /* max-width: 100%; */
+  position: absolute;
+  /* float: left; */
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  
+}

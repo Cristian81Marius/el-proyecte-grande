@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
 
 import App from './App';
+import { AuthProvider } from 'react-auth-kit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
+  <AuthProvider
+  authType={'cookie'}
+  authName={'_auth'}
+  cookieDomain={window.location.hostname}
+  cookieSecure={false}>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+  </AuthProvider>
     
 );
 

@@ -3,19 +3,24 @@ import Card from "../components/Aspect/Card";
 import { Form } from "semantic-ui-react";
 
 function Buy(){
+    window.location.replace("https://buy.stripe.com/test_eVaaGFenubFl14QfYZ")
+    // const [number, setnumber] = useState("");
+    // const [date, setDate] = useState("");
+    // const [cvv, setCvv] = useState("");
 
-    const [number, setnumber] = useState("");
-    const [date, setDate] = useState("");
-    const [cvv, setCvv] = useState("");
+    // const data={
+    //     number : number,
+    //     date : date,
+    //     cvv : cvv
+    // }
 
-    const data={
-        number : number,
-        date : date,
-        cvv : cvv
-    }
-
-    return <Card>
-        <form>
+    return<>
+    <form action="/Payment" method="POST">
+      <button type="submit">Pay 120 lei</button>
+    </form>
+    </> 
+    // <Card>
+        {/* <form>
             <label hrmlfor="number">Credic card number</label>
             <input value={number} onChange={(e)=> setnumber(e.target.value)} id="number" name="number"></input>
             <label hrmlfor="expyration">Expire Date</label>
@@ -24,10 +29,10 @@ function Buy(){
             <input value={cvv} onChange={(e)=> setCvv(e.target.value)} id="cvv" name="cvv"></input>
             <button type="submit">Log In</button>
         </form>
+ */}
 
 
-
-    <form class="ui form">
+    {/* <form class="ui form">
         <h4 class="ui dividing header">Billing Information</h4>
         <div class="field">
         <label>Card Type</label>
@@ -87,8 +92,8 @@ function Buy(){
     </div>
   </div>
   <div class="ui button" tabindex="0">Submit</div>
-</form>
-        </Card>
+</form> */}
+        {/* </Card> */}
 }
 
 export default Buy;

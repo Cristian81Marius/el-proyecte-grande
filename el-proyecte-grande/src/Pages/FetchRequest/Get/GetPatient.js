@@ -1,44 +1,68 @@
 import { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import axios from "../../FetchRequest/axios";
-import { useParams } from "react-router-dom";
+// import { Table } from "react-bootstrap";
+// import { Link } from "react-router-dom";
+// import axios from "../../FetchRequest/axios";
+// import { useParams } from "react-router-dom";
+// import { PropaneSharp } from "@mui/icons-material";
+import { Button, Image, Header, Icon, Modal,Grid  } from 'semantic-ui-react'
+import axios from "../axios"
 
+function GetPatient(params){
+    const [loadedPatient, setloadedPatient] = useState({})
+    const [open, setOpen] = useState(false)
 
-function GetAllPatients(){
-    const params = useParams();
-    const [loadedPatient, setloadedPatient] = useState([])
+    const onGetPatient = async() =>{
+        await axios.get(`Patients/${params.id}`
+        ).then(function (response) {
+            setloadedPatient(response['data'])
+          }).catch(function (error) {
+            console.log(error);
+          })
+    }
 
-    useEffect(() => {
-      async function fetchData(){
-        const request =  await axios.get(`Patients/${params.id}`)
-        setloadedPatient(request['data'])
-        return request['data'];
-      } 
-      fetchData();
-    }, [`Patients/${params.id}`])
-    return <div className= "mt-5 d-flex justify-content-left">
+return <>
+<Modal
+ closeIcon
+ open={open}
+ trigger={<Button primary onClick={onGetPatient}>Details</Button>}
+ onClose={() => setOpen(false)}
+ onOpen={() => setOpen(true)}
+>
+ <Header content='Details' />
+   <Modal.Content>
 
+   <Grid>
+    <Grid.Column width={4}>
+      <Image src={loadedPatient.photo} style={{ width: 100, height: 100 }}/>
+    </Grid.Column>
+    <Grid.Column width={9}>
+      <Grid.Row>
+        <Header content="Phone" ></Header>
+        {loadedPatient.Phone}
+        </Grid.Row>
+        <Grid.Row>
+        <Header content="CNP" ></Header>
+        {loadedPatient.cnp}
+        </Grid.Row>
+        <Grid.Row>
+        <Header content="Name" ></Header>
+        {loadedPatient.lastName} {loadedPatient.firstName}
+        </Grid.Row>
+        <Grid.Row>
+        <Header content="house" ></Header>
+        {loadedPatient.houseId}
+        </Grid.Row>
+    </Grid.Column>
+  </Grid>
 
-    <ol className="mt-4" striped bordered hover size="sm">
-            <tr key= '0'>
-                <td>Name:</td>
-                <td><Link to={`/patient/:${loadedPatient.Id}`}>{loadedPatient.Name}</Link></td>
-            </tr>
-            <tr key= '1'>
-                <td>CNP:</td>
-                <td>{loadedPatient.CNP}</td>
-            </tr>
-            <tr key= '2'>
-                <td>Phone:</td>
-                <td>{loadedPatient.Phone}</td>
-            </tr>
-            <tr key= '3'>
-                <td>Photo:</td>
-                <td><img src={loadedPatient.Photo}/></td>
-            </tr>
-    </ol>
-</div>
+   </Modal.Content>
+ <Modal.Actions>
+   <Button color='red' onClick={() => setOpen(false)}>
+     <Icon name='cancel' /> Back
+   </Button>
+ </Modal.Actions>
+</Modal>
+</>
 }
 
-export default GetAllPatients;
+export default GetPatient;

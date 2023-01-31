@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-// import { Table } from "react-bootstrap";
-// import { Link } from "react-router-dom";
 import axios from "../../FetchRequest/axios";
-// import DeletePatient from "../Delete/DeletePatient";
-// import AddPatient from "../Put/AddPatient";
-import React, { Component } from 'react'
-import { Button, Card, Divider, Image, Placeholder } from 'semantic-ui-react'
-import AddPatient from "../Post/AddPatient";
+import React from 'react'
+import {Card, Image} from 'semantic-ui-react'
+import EditPatient from "../Edit/EditPatient";
+import GetPatient from "./GetPatient";
+import DeletePatient from "../Delete/DeletePatient";
+import {withAuthHeader} from 'react-auth-kit';
+import Cookies from "js-cookie";
+import RoleAcces from "../../../authentification/Permision";
 
 function GetAllPatients(){
     
@@ -14,8 +15,12 @@ function GetAllPatients(){
 
     useEffect(() => {
       async function fetchData(){
-        const request =  await axios.get('Patients')
-        console.log(request["data"])
+        const request =  await axios.get('Patients',{
+        headers: {
+          'Authorization': `Bearer ${Cookies.get("token")}`
+        }
+      }
+      )
         setloadedPatients(request['data'])
         return request['data'];
       }
@@ -23,7 +28,7 @@ function GetAllPatients(){
     }, ['Patients'])
 
   return <> 
-  <AddPatient></AddPatient>
+
   <Card.Group doubling itemsPerRow={3} stackable>
   {loadedPatients.map(card=>
     <Card key={card.id}>
@@ -37,10 +42,9 @@ function GetAllPatients(){
       </Card.Content>
 
       <Card.Content extra>
-        <Button primary>
-          Add
-        </Button>
-        <Button>Delete</Button>
+        <GetPatient id={card.id}/>
+        {!RoleAcces("Patient") && <> {!RoleAcces("Medic") && <EditPatient data={card}/>}</>}
+        {!RoleAcces("Patient") && <> {!RoleAcces("Medic") && <DeletePatient id={card.id}/>}</>}
       </Card.Content>
     </Card>
   )}

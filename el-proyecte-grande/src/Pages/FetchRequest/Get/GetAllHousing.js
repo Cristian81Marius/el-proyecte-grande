@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "../../FetchRequest/axios";
 import DeleteHouse from "../Delete/DeleteHouse";
 import React from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
+import {Card, Image } from 'semantic-ui-react'
+import GetHouse from "./GetHouse";
+import AddHouse from "../Put/AddHouse"
+import EditHouse from "../Edit/EditHouse";
+import RoleAcces from "../../../authentification/Permision";
 
 function GetAllHousing(){
     const [loadedHousing, setloadedHousing] = useState([])
@@ -18,33 +22,33 @@ function GetAllHousing(){
     }, ['House'])
     
 
-return <Card.Group>
+return<>
+ <AddHouse/>
+ <Card.Group>
     {loadedHousing.map(house=>
 <Card key={house.id}>
   <Card.Content>
     <Image
       floated='right'
       size='mini'
-      src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+      src='https://dalimag.ro/9470-large_default/hous-anti-stres.webp'
     />
-    <Card.Header>Steve Sanders</Card.Header>
-    <Card.Meta>Friends of Elliot</Card.Meta>
+    <Card.Header>House {house.id}</Card.Header>
+    <Card.Meta>{house.street} {house.city} {house.nrStreet}</Card.Meta>
     <Card.Description>
-        {house.linkLocation}
+      <a href={house.linkLocation}>{house.linkLocation}</a>
     </Card.Description>
   </Card.Content>
   <Card.Content extra>
-    <div className='ui two buttons'>
-      <Button basic color='blue'>
-        Detalii
-      </Button>
-      <Button basic color='blue'>
-        Editare
-      </Button>
+    <div className='ui three buttons'>
+      <GetHouse id={house.id}/>
+      <EditHouse data={house}/>
+      {!RoleAcces("Ptient") && <DeleteHouse id={house.id}/> }
     </div>
   </Card.Content>
 </Card>)}
 </Card.Group>
+</>
 }
 
 export default GetAllHousing;

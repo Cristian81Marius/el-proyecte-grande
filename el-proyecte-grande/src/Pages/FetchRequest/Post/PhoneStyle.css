@@ -1,0 +1,19 @@
+.PhoneInput {
+	display: flex;
+
+	/* This is done to stretch the contents of this component. */
+	width: 350px;
+	height: 40px;
+}
+
+.PhoneInputInput {
+	display: flex;
+	width: 40px;
+	/* The phone number input stretches to fill all empty space */
+	height: 40px;
+}
+
+.PhoneInputCountryIcon {
+	width: 20px;
+	height: 20px;
+}

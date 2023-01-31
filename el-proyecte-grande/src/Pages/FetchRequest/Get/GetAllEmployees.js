@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
-// import { Link } from "react-router-dom";
 import axios from "../../FetchRequest/axios";
 import _ from 'lodash'
 import React from 'react';
@@ -11,25 +9,22 @@ import {
   MDBTabsContent,
   MDBTabsPane
 } from 'mdb-react-ui-kit';
-// import AllEmployee from "../../UsersViews/Employee";
 import FilterEmployee from "../../AllEmployee";
 
 function GetAllEmployees(){
     const [loadedEmployees, setloadedEmployees] = useState([])
-    const [fillActive, setFillActive] = useState('tab1');
+    const [fillActive, setFillActive] = useState('all');
 
   const handleFillClick = (value) => {
     if (value === fillActive) {
       return;
     }
-
     setFillActive(value);
   };
     
     useEffect(() => {
       async function fetchData(){
         const request =  await axios.get('Employees')
-        console.log(request['data'])
         setloadedEmployees(request['data'])
         return request['data'];
       }
@@ -38,13 +33,22 @@ function GetAllEmployees(){
 
     
     function filterEmployeeData(role){
+      if(role==="all"){
+        return loadedEmployees
+      }else{
         return loadedEmployees.filter(c=>c.role == role)
+      }
     }
 
 
 return (<>
     <MDBTabs fill className='mb-3'>
       <MDBTabsItem>
+      <MDBTabsLink onClick={() => handleFillClick("all")} active={fillActive === "all"}>
+        All
+        </MDBTabsLink>
+        </MDBTabsItem>
+        <MDBTabsItem>
         <MDBTabsLink onClick={() => handleFillClick('Medic')} active={fillActive === 'Medic'}>
         Medic
         </MDBTabsLink>
@@ -67,12 +71,12 @@ return (<>
     </MDBTabs>
 
     <MDBTabsContent>
+      <MDBTabsPane show={fillActive === "all"}><FilterEmployee data={filterEmployeeData("all")}/></MDBTabsPane>
       <MDBTabsPane show={fillActive === 'Medic'}><FilterEmployee data={filterEmployeeData(0)}/></MDBTabsPane>
       <MDBTabsPane show={fillActive === 'Supervisor'}><FilterEmployee data={filterEmployeeData(1)}/></MDBTabsPane>
       <MDBTabsPane show={fillActive === 'Cleaner'}><FilterEmployee data={filterEmployeeData(2)}/></MDBTabsPane>
       <MDBTabsPane show={fillActive === 'Manager'}><FilterEmployee data={filterEmployeeData(3)}/></MDBTabsPane>
     </MDBTabsContent>
-    {/* <FilterEmployee data={loadedEmployees}/> */}
   </>
   )
 }

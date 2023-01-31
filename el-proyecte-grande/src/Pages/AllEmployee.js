@@ -9,29 +9,41 @@ import {
   MDBRow,
   MDBCol
 } from 'mdb-react-ui-kit';
+import { Button } from 'semantic-ui-react';
+import DeleteEmployee from './FetchRequest/Delete/DeleteEmployee';
+import GetEmployee from './FetchRequest/Get/GetEmployee';
+import AddEmployee from './FetchRequest/Put/AddEmployee';
+import EditEmployee from './FetchRequest/Edit/EditEmployee';
+import RoleAcces from '../authentification/Permision';
 
 function FilterEmployee(props){
     
-return <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-<MDBCol>
+return <>
+<AddEmployee/>
+ <MDBRow center className='row-cols-1 row-cols-md-3 g-0'>
     {props.data.map(card=>
-  <MDBCard>
+  <MDBCard key={card.id}>
     <MDBCardImage
-      src='https://mdbootstrap.com/img/new/standard/city/041.webp'
+      src={card.photo}
       alt='...'
       position='top'
+      
     />
     <MDBCardBody>
-      <MDBCardTitle>Card title</MDBCardTitle>
+      <MDBCardTitle>{card.firstName} {card.lastName}</MDBCardTitle>
       <MDBCardText>
-        This is a longer card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.
+        {card.phone}
+      </MDBCardText>
+      <MDBCardText>
+        {RoleAcces("Admin") && <EditEmployee data={card}>Edit</EditEmployee> }
+        <GetEmployee id={card.id}>Details</GetEmployee>
+        {RoleAcces("Admin") && <DeleteEmployee id={card.id}>Delete</DeleteEmployee>}
       </MDBCardText>
     </MDBCardBody>
   </MDBCard>
     )}
-</MDBCol>
 </MDBRow>
+</>
 }
 
 export default FilterEmployee;
