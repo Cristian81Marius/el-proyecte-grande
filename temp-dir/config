@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/CodecoolGlobal/el-proyecte-grande-sprint-1-csharp-Cristian81Marius.git
+	fetch = +refs/*:refs/*
+	mirror = true
