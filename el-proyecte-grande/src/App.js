@@ -16,6 +16,8 @@ import Buy from './Pages/Buy';
 // import GetToken from './authentification/Permision';
 import { RequireAuth } from 'react-auth-kit';
 import Cookies from 'js-cookie';
+import Success from './Pages/PaymentStatus/Success';
+import Cancel from './Pages/PaymentStatus/Cancel';
 
 function App() {
 
@@ -25,6 +27,9 @@ function App() {
         <Route exact path='/' element={<Home/>}/>
         {/* <Route path='/getToken' element={<GetToken/>}/> */}
         <Route path='/buy' element={<Buy/>}/>
+        <Route path='/success' element={<Success/>}/>
+        <Route path='/cancel' element={<Cancel/>}/>
+
         {Cookies.get("email") != null &&
         <>
         <Route path="/login" element={<Login/>}/>
