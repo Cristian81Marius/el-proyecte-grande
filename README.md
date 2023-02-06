@@ -1,4 +1,4 @@
-<h1>Patient Management Web Application</h1>
+<h1>El Proyecte Grande Patient Management</h1>
 <p>This web application was created to manage patients according to their needs. It is composed of three parts: frontend, backend, and database.</p>
 <h2>Frontend</h2>
 <ul>
