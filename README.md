@@ -3,14 +3,17 @@
 
 <h2>Description</h2>
 <p>This web application manages patients, allowing them to have a personal profile for easy communication with other patients, doctors, or other support. Patients have a medical profile which can only be accessed by authorized medical personnel or personal guardians. The app also allows for multiple roles, with doctors being able to write prescriptions for patients. Additionally, there is a public discussion area for communication between patients and doctors.</p>
-<h2>Frontend</h2>
+<h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="react" height="42" width="70">
+Frontend
+  <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="40">
+</h2>
 <ul>
   <li>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="react" height="42" width="70">
    <strong>React was used for the frontend</strong>
   </li>
   <li>
-    <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="40">
+    
    <strong>Semantic UI was used as the UI library/strong>
   </li>
 </ul> 
