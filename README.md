@@ -20,7 +20,7 @@
    <strong>AspNet and C# were used for the backend</strong>
   </li>
   <li>
-    <img src="https://i0.wp.com/www.ebenmonney.com/wp-content/uploads/2018/03/identityserver4-engityframework.png?w=810&ssl=1" alt="core" height="42" width="70">
+    <img src="https://i0.wp.com/www.ebenmonney.com/wp-content/uploads/2018/03/identityserver4-engityframework.png?w=810&ssl=1" alt="core" height="42" width="80">
    <strong>Identity and Entity Framework were used for authentication and data management</strong>
   </li>
 </ul>
