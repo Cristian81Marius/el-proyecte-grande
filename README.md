@@ -7,10 +7,22 @@
 </ul>
 <h2>Backend</h2>
 <ul>
-  <li>AspNet and C# were used for the backend</li>
-  <li>Microsoft SQL was used as the database</li>
-  <li>Stripe was used for the payment method</li>
-  <li>Identity and Entity Framework were used for authentication and data management</li>
+  <li>
+    <img src="https://www.allotraining.com/wp-content/uploads/2021/08/c-.net_.png" alt="Visual Studio Logo" height="42" width="50">
+   <strong>AspNet and C# were used for the backend</strong>
+  </li>
+  <li>
+    <img src="https://upload.wikimedia.org/wikipedia/de/8/8c/Microsoft_SQL_Server_Logo.svg" alt="MicrosoftSQL" height="42" width="50">
+   <strong>Microsoft SQL was used as the database</strong>
+  </li>
+  <li>
+    <img src="http://t3.gstatic.com/images?q=tbn:ANd9GcSJHbnfk81kA_5mIj81yhRy3R2LRx3S11OyMjC68QeONsOp5DXx" alt="Stripe" height="42" width="50">
+   <strong>AspNet and C# were used for the backend</strong>
+  </li>
+  <li>
+    <img src="https://i0.wp.com/www.ebenmonney.com/wp-content/uploads/2018/03/identityserver4-engityframework.png?w=810&ssl=1" alt="core" height="42" width="50">
+   <strong>Identity and Entity Framework were used for authentication and data management</strong>
+  </li>
 </ul>
 <h2>Features</h2>
 <ul>
