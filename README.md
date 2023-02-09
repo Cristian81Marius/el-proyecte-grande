@@ -7,7 +7,7 @@
    <strong>React was used for the frontend</strong>
   </li>
   <li>
-    <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="50">
+    <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="40">
    <strong>Semantic UI was used as the UI library/strong>
   </li>
 </ul>
