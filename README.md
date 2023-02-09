@@ -13,7 +13,7 @@
     <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="40">
    <strong>Semantic UI was used as the UI library/strong>
   </li>
-</ul>
+</ul> 
 <h2>Backend</h2>
 <ul>
   <li>
