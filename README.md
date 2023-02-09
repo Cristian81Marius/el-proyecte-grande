@@ -46,5 +46,7 @@ Frontend
   <li>Employees can add new patients to the system</li>
   <li>Communication between patients, doctors, and employees with different roles on the platform</li>
 </ul>
+<h3>Main page</h3>
+ <img src="https://user-images.githubusercontent.com/92048815/217948015-fd813674-e9e2-4e31-8f07-fd470e9bf4e3.png" alt="core" height="42" width="80">
 <h2>Use Case</h2>
 <p>The application serves as a platform for patients, doctors, and employees to interact and manage patient data. Patients can access their profiles, doctors can write prescriptions, and employees can add new patients to the system. The application also allows for secure payments with the use of Stripe.</p>
