@@ -1,5 +1,8 @@
 <h1>El Proyecte Grande Patient Management</h1>
 <p>This web application was created to manage patients according to their needs. It is composed of three parts: frontend, backend, and database.</p>
+
+<h2>Description</h2>
+<p>This web application manages patients, allowing them to have a personal profile for easy communication with other patients, doctors, or other support. Patients have a medical profile which can only be accessed by authorized medical personnel or personal guardians. The app also allows for multiple roles, with doctors being able to write prescriptions for patients. Additionally, there is a public discussion area for communication between patients and doctors.</p>
 <h2>Frontend</h2>
 <ul>
   <li>
