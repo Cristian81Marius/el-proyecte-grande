@@ -2,8 +2,14 @@
 <p>This web application was created to manage patients according to their needs. It is composed of three parts: frontend, backend, and database.</p>
 <h2>Frontend</h2>
 <ul>
-  <li>React was used for the frontend</li>
-  <li>Semantic UI was used as the UI library</li>
+  <li>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="react" height="42" width="70">
+   <strong>React was used for the frontend</strong>
+  </li>
+  <li>
+    <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="70">
+   <strong>Semantic UI was used as the UI library/strong>
+  </li>
 </ul>
 <h2>Backend</h2>
 <ul>
