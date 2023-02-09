@@ -4,9 +4,12 @@
 <h2>Description</h2>
 <p>This web application manages patients, allowing them to have a personal profile for easy communication with other patients, doctors, or other support. Patients have a medical profile which can only be accessed by authorized medical personnel or personal guardians. The app also allows for multiple roles, with doctors being able to write prescriptions for patients. Additionally, there is a public discussion area for communication between patients and doctors.</p>
 <h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="react" height="42" width="50">
 Frontend
+  <p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="react" height="42" width="50">
   <img src="https://react.semantic-ui.com/logo.png" alt="semantic-ui" height="42" width="40">
+    
+  </p>
 </h2>
 <ul>
   <li>
@@ -18,6 +21,12 @@ Frontend
 </ul> 
 <h2>
   Backend
+  <p align="center">
+<img src="https://www.allotraining.com/wp-content/uploads/2021/08/c-.net_.png" alt="Visual Studio Logo" height="42" width="70">
+   <img src="https://upload.wikimedia.org/wikipedia/de/8/8c/Microsoft_SQL_Server_Logo.svg" alt="MicrosoftSQL" height="42" width="52">
+   <img src="http://t3.gstatic.com/images?q=tbn:ANd9GcSJHbnfk81kA_5mIj81yhRy3R2LRx3S11OyMjC68QeONsOp5DXx" alt="Stripe" height="42" width="70">
+       <img src="https://i0.wp.com/www.ebenmonney.com/wp-content/uploads/2018/03/identityserver4-engityframework.png?w=810&ssl=1" alt="core" height="42" width="80">
+<p>
 </h2>
 <p>
   
